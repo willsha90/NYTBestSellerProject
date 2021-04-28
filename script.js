@@ -22,14 +22,27 @@ function getNYT() {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
+            // console.log(data);
             bookImg = data.results.books[0].book_image;
             book.attr("src", bookImg)
         });
 }
 
+// Fetch data from Open Library API
+function getLibrary() {
+    var libraryURL = "https://openlibrary.org/works/OL45883W.json";
+    fetch(libraryURL)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+        });
+}
+
 // Runs function to get data from NYT api
 getNYT();
+getLibrary();
 
 
 // true/false 
