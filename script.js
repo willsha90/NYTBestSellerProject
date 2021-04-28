@@ -30,3 +30,45 @@ function getNYT() {
 
 // Runs function to get data from NYT api
 getNYT();
+
+
+// true/false 
+function questionyes1() {
+    document.getElementById('questiona').innerHTML = "Correct! BOOKX is NYT best-seller!";
+    document.getElementById('questiona').style.color = "green";
+  }
+  
+  function questionno1() {
+    document.getElementById('questiona').innerHTML = "Wrong! BOOKX is not a NYT best-seller!";
+    document.getElementById('questiona').style.color = "red";
+  }
+  
+  function questionyes2() {
+    document.getElementById('questionb').innerHTML = "Correct! BOOKX is NYT best-seller!";
+    document.getElementById('questionb').style.color = "green";
+  }
+  
+  function questionno2() {
+    document.getElementById('questionb').innerHTML = "Wrong! BOOKX is not a NYT best-seller!";
+    document.getElementById('questionb').style.color = "red";
+  }
+  
+  function questionyes3() {
+    document.getElementById('questionc').innerHTML = "Correct! BOOKX is NYT best-seller!";
+    document.getElementById('questionc').style.color = "green";
+  }
+  
+  function questionno3() {
+    document.getElementById('questionc').innerHTML = "Wrong! BOOKX is not a NYT best-seller!";
+    document.getElementById('questionc').style.color = "red";
+  }
+  
+  function questionyes4() {
+    document.getElementById('questiond').innerHTML = "Correct! BOOKX is NYT best-seller!";
+    document.getElementById('questiond').style.color = "green";
+  }
+  
+  function questionno4() {
+    document.getElementById('questiond').innerHTML = "Wrong! BOOKX is not a NYT best-seller!";
+    document.getElementById('questiond').style.color = "red";
+  }
