@@ -1,6 +1,90 @@
 // DEPENDENCIES
 var book = $('.title-image');
 
+
+var ourBooks = [
+    {
+        title: "Where the Red Fern Grows"
+    },
+    {
+        title: "Where the Wild Things Are"
+    },
+    {
+        title: "Empire of Pain"
+    },
+    {
+        title: "The Day the Crayons Quit"
+    },
+    {
+        title: "Temptation"
+    },
+    {
+        title: "To Kill a Mockingbird"
+    },
+    {
+        title: "The Beautiful Poetry of Donald Trump"
+    },
+    {
+        title: "War and Peace"
+    },
+    {
+        title: "The Diary of a Young Girl"
+    },
+    {
+        title: "Hope a Magic Land"
+    },
+    {
+        title: "Animal Farm"
+    },
+    {
+        title: "The Way of Kings"
+    },
+    {
+        title: "Name of the Wind"
+    },
+    {
+        title: "The Giver"
+    },
+    {
+        title: "The Art of the Deal"
+    },
+    {
+        title: "Harry Potter and the Sorcerer's Stone"
+    },
+    {
+        title: "A Promised Land"
+    },
+    {
+        title: "On Earth We're Briefly Gorgeous"
+    },
+    {
+        title: "My Year of Rest and Relaxation"
+    },
+    {
+        title: "Ghost Wall"
+    },
+    {
+        title: "Trick Mirror"
+    },
+    {
+        title: "Camera Lucida"
+    },
+    {
+        title: "Me Talk Pretty One Day"
+    },
+    {
+        title: "Myra Breckinridge"
+    },
+    {
+        title: "Line of Beauty"
+    },
+    {
+        title: "Invisible Cities"
+    },
+    {
+        title: "Autobiography of Red"
+    }
+]
 // Get data from NYT best sellers API
 var nytBase = "https://api.nytimes.com/svc/books/v3";
 // var nytPath = "/lists/names.json?bestsellers-date=2009-04-28&";
