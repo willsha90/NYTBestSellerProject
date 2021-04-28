@@ -72,3 +72,13 @@ function questionyes1() {
     document.getElementById('questiond').innerHTML = "Wrong! BOOKX is not a NYT best-seller!";
     document.getElementById('questiond').style.color = "red";
   }
+
+
+// connect button to 
+var elQuestion = queryselector // input html div for question
+var elanswer = queryselector // input html div for user answer
+var btnUserYes = document.querySelector ("#userSaysYes");
+var btnUserNo = document.querySelector ("#userSaysNo");
+
+btnUserYes.addEventListener("click");
+btnUserYNo.addEventListener("click");
