@@ -5,9 +5,9 @@ var book = $('.title-image');
 var nytBase = "https://api.nytimes.com/svc/books/v3";
 // var nytPath = "/lists/names.json?bestsellers-date=2009-04-28&";
 // Searches for book with specific title
-// var nytPath = "/lists/best-sellers/history.json?title=Change of Heart&";
+var nytPath = "/lists/best-sellers/history.json?title=Change of Heart&";
 // Gets list from specified date and section, includes image
-var nytPath = "/lists/2019-01-20/hardcover-fiction.json?";
+// var nytPath = "/lists/2019-01-20/hardcover-fiction.json?";
 var nytKey = "api-key=tZmSouJCKxYwB50PAcr0v6vFs6EI8yNm";
 var nytSecret = "OeaEEqlPYBWtKSxa"
 function getNYT() {
@@ -23,30 +23,31 @@ function getNYT() {
         })
         .then(function (data) {
             console.log(data);
-            bookImg = data.results.books[0].book_image;
-            book.attr("src", bookImg);
+            // var bookImg = data.results.books[0].book_image;
+            // book.attr("src", bookImg);
         });
 }
 
 // Fetch data from Open Library API
 function getLibrary() {
-    //covers.openlibrary.org/b/id/9096878-L.jpg 2x
-    var imageURL = "http:books.google.com/books/content?id=QVn-CgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api";
-    var bookImageURL = "https://storage.googleapis.com/du-prd/books/images/9780765326355.jpg";
+    // Get book cover using its ISBN code
+    // var bookImageURL = "https://storage.googleapis.com/du-prd/books/images/9780765326355.jpg";
+    var openLibImage = "http://covers.openlibrary.org/b/isbn/9780765326355-L.jpg";
+    // Get book data from library API
     var libraryURL = "https://openlibrary.org/works/OL45883W.json";
-    var googleBookURL = "https://www.googleapis.com/books/v1/volumes?q=wayofking"
-    fetch(googleBookURL)
+    // var googleBookURL = "https://www.googleapis.com/books/v1/volumes?q=wayofking"
+    fetch(libraryURL)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            // console.log(data);
-            book.attr("src", imageURL);
+            console.log(data);
+            book.attr("src", openLibImage);
         });
 }
 
 // Runs function to get data from NYT api
-getNYT();
+// getNYT();
 getLibrary();
 
 
@@ -93,10 +94,10 @@ function questionyes1() {
 
 
 // connect button to 
-var elQuestion = queryselector // input html div for question
-var elanswer = queryselector // input html div for user answer
+// var elQuestion = queryselector // input html div for question
+// var elanswer = queryselector // input html div for user answer
 var btnUserYes = document.querySelector ("#userSaysYes");
 var btnUserNo = document.querySelector ("#userSaysNo");
 
-btnUserYes.addEventListener("click");
-btnUserYNo.addEventListener("click");
+// btnUserYes.addEventListener("click");
+// btnUserYNo.addEventListener("click");
