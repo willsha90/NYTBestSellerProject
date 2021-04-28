@@ -22,21 +22,26 @@ function getNYT() {
             return response.json();
         })
         .then(function (data) {
-            // console.log(data);
+            console.log(data);
             bookImg = data.results.books[0].book_image;
-            book.attr("src", bookImg)
+            book.attr("src", bookImg);
         });
 }
 
 // Fetch data from Open Library API
 function getLibrary() {
+    //covers.openlibrary.org/b/id/9096878-L.jpg 2x
+    var imageURL = "http:books.google.com/books/content?id=QVn-CgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api";
+    var bookImageURL = "https://storage.googleapis.com/du-prd/books/images/9780765326355.jpg";
     var libraryURL = "https://openlibrary.org/works/OL45883W.json";
-    fetch(libraryURL)
+    var googleBookURL = "https://www.googleapis.com/books/v1/volumes?q=wayofking"
+    fetch(googleBookURL)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
+            // console.log(data);
+            book.attr("src", imageURL);
         });
 }
 
