@@ -4,87 +4,114 @@ var book = $('.title-image');
 
 var ourBooks = [
     {
-        title: "Where the Red Fern Grows"
+        title: "Where the Red Fern Grows",
+        isbn: "044022814X"
     },
     {
-        title: "Where the Wild Things Are"
+        title: "Where the Wild Things Are",
+        isbn: "9780812413748"
     },
     {
-        title: "Empire of Pain"
+        title: "Empire of Pain: The Secret History of the Sackler Dynasty",
+        isbn: "9781529062489"
     },
     {
-        title: "The Day the Crayons Quit"
+        title: "The Day the Crayons Quit",
+        isbn: "9780605711662"
+    },
+    // {
+    //     title: "Temptation",
+    //     isbn:
+    // }, what book is this?^
+    {
+        title: "To Kill a Mockingbird",
+        isbn: "9780397001514"
     },
     {
-        title: "Temptation"
+        title: "The Beautiful Poetry of Donald Trump",
+        isbn: "9781786894724"
     },
     {
-        title: "To Kill a Mockingbird"
+        title: "War and Peace",
+        isbn: "9780393042375"
     },
     {
-        title: "The Beautiful Poetry of Donald Trump"
+        title: "The Diary of a Young Girl",
+        isbn: "9780141315188"
+    },
+    // {
+    //     title: "Hope a Magic Land",
+    //     isbn:
+    // }, what book is this?^
+    {
+        title: "Animal Farm",
+        isbn: "9780140059618"
     },
     {
-        title: "War and Peace"
+        title: "The Way of Kings",
+        isbn: "9780765326355"
     },
     {
-        title: "The Diary of a Young Girl"
+        title: "Name of the Wind",
+        isbn: "9780756404079"
     },
     {
-        title: "Hope a Magic Land"
+        title: "The Giver",
+        isbn: "9780395645666"
     },
     {
-        title: "Animal Farm"
+        title: "The Art of the Deal",
+        isbn: "9780394555287"
     },
     {
-        title: "The Way of Kings"
+        title: "Harry Potter and the Sorcerer's Stone",
+        isbn: "9780747532699"
     },
     {
-        title: "Name of the Wind"
+        title: "A Promised Land",
+        isbn:  "9781524763169"
     },
     {
-        title: "The Giver"
+        title: "On Earth We're Briefly Gorgeous",
+        isbn: "9780525562023"
     },
     {
-        title: "The Art of the Deal"
+        title: "My Year of Rest and Relaxation",
+        isbn: "9780525522119"
     },
     {
-        title: "Harry Potter and the Sorcerer's Stone"
+        title: "Ghost Wall",
+        isbn: "9781783784455"
     },
     {
-        title: "A Promised Land"
+        title: "Trick Mirror: Reflections on Self-Delusion",
+        isbn: "9780525510543"
     },
     {
-        title: "On Earth We're Briefly Gorgeous"
+        title: "Camera Lucida",
+        isbn: "9782070205417"
     },
     {
-        title: "My Year of Rest and Relaxation"
+        title: "Me Talk Pretty One Day",
+        isbn: "9780316777728"
     },
     {
-        title: "Ghost Wall"
+        title: "Myra Breckinridge",
+        isbn: "9780586029220"
     },
     {
-        title: "Trick Mirror"
+        title: "Line of Beauty",
+        isbn: "9780330483209"
     },
     {
-        title: "Camera Lucida"
+        title: "Invisible Cities",
+        isbn: "9780151452903"
     },
     {
-        title: "Me Talk Pretty One Day"
-    },
-    {
-        title: "Myra Breckinridge"
-    },
-    {
-        title: "Line of Beauty"
-    },
-    {
-        title: "Invisible Cities"
-    },
-    {
-        title: "Autobiography of Red"
+        title: "Autobiography of Red",
+        isbn: "9780375401336"
     }
-]
+];
 // Get data from NYT best sellers API
 var nytBase = "https://api.nytimes.com/svc/books/v3";
 // var nytPath = "/lists/names.json?bestsellers-date=2009-04-28&";
