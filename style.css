@@ -2,4 +2,18 @@ body {
     min-height: 100vh;;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+.image-container {
+    display: flex;
+}
+
+.image-box {
+    max-width: 66vw;
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
 }
