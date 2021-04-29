@@ -135,66 +135,65 @@ btnUserYes.click(function() {
 
 
 
-// Get data from NYT best sellers API
-var nytBase = "https://api.nytimes.com/svc/books/v3";
-// var nytPath = "/lists/names.json?bestsellers-date=2009-04-28&";
-// Searches for book with specific title
-// var nytPath = "/lists/best-sellers/history.json?title=Change of Heart&";
-// Gets list from specified date and section, includes image
-var nytPath = "/lists/2019-01-20/hardcover-fiction.json?";
-var nytKey = "api-key=tZmSouJCKxYwB50PAcr0v6vFs6EI8yNm";
-var nytSecret = "OeaEEqlPYBWtKSxa"
-function getNYT() {
+// Checks if specified book is in NYT best sellers API
+async function checkNYT(searchType, searchBook) {
+    var nytBase = "https://api.nytimes.com/svc/books/v3";
+    // Searches for book with specific title or ISBN
+    if (searchType === "title") {
+        var nytPath = "/lists/best-sellers/history.json?title=" + searchBook;
+    } else if (searchType === "isbn") {
+        var nytPath = "/lists/best-sellers/history.json?isbn=" + searchBook;
+    } else {console.log("No search type included for checkNYT")};
+    var nytKey = "&api-key=tZmSouJCKxYwB50PAcr0v6vFs6EI8yNm";
     var nytURL = nytBase + nytPath + nytKey;
-    fetch(nytURL, {
+    // Fetch data from NYT API
+    var response = await fetch(nytURL, {
         method: "GET",
         headers: {
             "Accept": "application/json"
         },
     })
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            // console.log(data);
-            bookImg = data.results.books[0].book_image;
-            book.attr("src", bookImg)
-        });
+    var data = await response.json()
+    
+    console.log(data);
+    if (data.results.length > 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 
-//check book
-// function checkBook(title) {
-//     if (in the NYT) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
-
-// function clickYES () {
-//     var bookTitle = "some title";
-//     if(checkBook(bookTitle) ==== true) {
-        
-//     }
-// }
-
-
 // Fetch data from Open Library API
-function getLibrary() {
+function getLibrary(bookISBN) {
+    // Get book cover using its ISBN code
+    var openLibImage = "http://covers.openlibrary.org/b/isbn/" + bookISBN + "-L.jpg";
+    // Get book data from library API
     var libraryURL = "https://openlibrary.org/works/OL45883W.json";
-    fetch(libraryURL)
+    var googleBookURL = "https://www.googleapis.com/books/v1/volumes?q=" + bookISBN;
+    fetch(googleBookURL)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
             console.log(data);
+            book.attr("src", openLibImage);
+            // book.attr("src", data.items[0].volumeInfo.imageLinks.thumbnail);
         });
 }
 
 // Runs function to get data from NYT api
-getNYT();
-getLibrary();
+var booksIndex = 0;
+// var bool = checkNYT();
+checkNYT("title", ourBooks[booksIndex].title)
+    .then((bool) => {
+        if (bool) {
+            console.log(ourBooks[booksIndex].title + " IS A NYT BEST SELLER");
+        } else {
+            console.log(ourBooks[booksIndex].title + " NOT ON LIST");
+        }
+    });
+getLibrary(ourBooks[booksIndex].isbn);
 
 
 // true/false 
