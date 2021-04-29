@@ -8,18 +8,13 @@ body {
 header {
     margin: 2rem;
     padding-top: 1rem;
-    background-color: yellow;
-}
-
-.image-container {
-    display: flex;
-}
-
-.image-box {
-    max-width: 66vw;
 }
 
 footer {
     display: flex;
     justify-content: space-evenly;
+}
+
+.card {
+    max-width: 30vw;
 }

@@ -1,7 +1,8 @@
 // DEPENDENCIES
 var book = $('.title-image');
+var titleEl = $("#title-caption")
 
-
+var bookIndex = 0;
 var ourBooks = [
     {
         title: "Where the Red Fern Grows",
@@ -112,6 +113,19 @@ var ourBooks = [
         isbn: "9780375401336"
     }
 ];
+
+//generate book data element
+function generateBooks() {
+    titleEl.text(ourBooks[bookIndex].title);
+}
+
+//
+function nextBook() {
+
+}
+
+
+
 // Get data from NYT best sellers API
 var nytBase = "https://api.nytimes.com/svc/books/v3";
 // var nytPath = "/lists/names.json?bestsellers-date=2009-04-28&";
