@@ -5,6 +5,8 @@ var btnUserYes = $("#userSaysYes");
 var btnUserNo = $("#userSaysNo");
 var scoreEl = $("#score");
 var score = 0;
+var incorrectEl = $("#incorrect-answer");
+var correctEl = $("#correct-answer")
 
 var bookIndex = 0;
 var ourBooks = [
@@ -113,24 +115,50 @@ var ourBooks = [
 
 
 //generate book data element
+
+
 btnUserYes.click(function() {
+    correctEl.attr("style", "display:none");
+    incorrectEl.attr("style", "display:none");
     bookIndex++ 
     titleEl.text(ourBooks[bookIndex].title);
-    checkNYT("title", ourBooks[booksIndex].title)
+    checkNYT("title", ourBooks[bookIndex].title)
     .then((bool) => {
         if (bool) {
             score++
             scoreEl.text(score)
-            // add element
-            console.log(ourBooks[booksIndex].title + " IS A NYT BEST SELLER");
+            correctEl.attr("style", "display:block");
+            console.log(ourBooks[bookIndex].title + " IS A NYT BEST SELLER");
         } else {
-            console.log(ourBooks[booksIndex].title + " NOT ON LIST");
+            incorrectEl.attr("style", "display:block")
+            console.log(ourBooks[bookIndex].title + " NOT ON LIST");
         }
     });
-    getLibrary(ourBooks[booksIndex].isbn);
-    
+    getLibrary(ourBooks[bookIndex].isbn);
     console.log("button click");
 })
+
+btnUserNo.click(function() {
+    correctEl.attr("style", "display:none");
+    incorrectEl.attr("style", "display:none");
+    bookIndex++ 
+    titleEl.text(ourBooks[bookIndex].title);
+    checkNYT("title", ourBooks[bookIndex].title)
+    .then((bool) => {
+        if (!bool) {
+            score++
+            scoreEl.text(score)
+            correctEl.attr("style", "display:block");
+            console.log(ourBooks[bookIndex].title + " IS A NYT BEST SELLER");
+        } else {
+            incorrectEl.attr("style", "display:block")
+            console.log(ourBooks[bookIndex].title + " NOT ON LIST");
+        }
+    });
+    getLibrary(ourBooks[bookIndex].isbn);
+    console.log("button click");
+})
+
 
 //fix title container to standard size
 // add element for score
@@ -193,17 +221,17 @@ function getLibrary(bookISBN) {
 }
 
 // Runs function to get data from NYT api
-var booksIndex = 1;
+// var booksIndex = 1;
 // var bool = checkNYT();
-checkNYT("title", ourBooks[booksIndex].title)
-    .then((bool) => {
-        if (bool) {
-            console.log(ourBooks[booksIndex].title + " IS A NYT BEST SELLER");
-        } else {
-            console.log(ourBooks[booksIndex].title + " NOT ON LIST");
-        }
-    });
-getLibrary(ourBooks[booksIndex].isbn);
+// checkNYT("title", ourBooks[booksIndex].title)
+//     .then((bool) => {
+//         if (bool) {
+//             console.log(ourBooks[booksIndex].title + " IS A NYT BEST SELLER");
+//         } else {
+//             console.log(ourBooks[booksIndex].title + " NOT ON LIST");
+//         }
+//     });
+// getLibrary(ourBooks[booksIndex].isbn);
 
 
 // true/false 
@@ -256,4 +284,7 @@ function questionyes1() {
 // btnUserYes.addEventListener("click");
 // btnUserYNo.addEventListener("click");
 
+// INITIALIZATIONS
+getLibrary(ourBooks[bookIndex].isbn);
+titleEl.text(ourBooks[bookIndex].title);
 

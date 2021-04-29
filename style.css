@@ -26,6 +26,11 @@ header {
     flex-direction: column;
 }
 
+.scoreboard {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 footer {
     display: flex;
     min-width: 100%;

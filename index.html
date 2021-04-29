@@ -24,10 +24,26 @@
                     <h1 class="title">NYT or NOT</h1>
                 </div>
                 <!-- score card -->
-                <div class="tags has-addons score-card">
-                    <span class="tag">Score</span>
-                    <span class="tag is-primary" id="score">0</span>
-                </div>
+                
+                    <div class="tags has-addons score-card">
+                        <span class="tag">Score</span>
+                        <span class="tag is-primary" id="score">0</span>
+                    </div>
+                <div class="container score">
+                    <div class="icon-text correct" style="display: none;" id="correct-answer">
+                        <span class="icon has-text-success">
+                        <i class="fas fa-check-square"></i>
+                        </span>
+                        <span class="correct-response">correct!</span>
+                    </div> 
+                    <div class="icon-text incorrect" style="display: none;" id="incorrect-answer">
+                        <span class="icon has-text-danger">
+                            <i class="fas fa-ban"></i>
+                        </span>
+                        <span>incorrect</span>
+                    </div>
+                </div>  
+                </div>  
             </div>
         </div>
     </header>
@@ -61,6 +77,7 @@
             </div>
     </footer>
 
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 
