@@ -3,6 +3,8 @@ var book = $('.title-image');
 var titleEl = $("#title-caption")
 var btnUserYes = $("#userSaysYes");
 var btnUserNo = $("#userSaysNo");
+var scoreEl = $("#score");
+var score = 0;
 
 var bookIndex = 0;
 var ourBooks = [
@@ -15,17 +17,13 @@ var ourBooks = [
         isbn: "9780812413748"
     },
     {
-        title: "Empire of Pain: The Secret History of the Sackler Dynasty",
+        title: "Empire of Pain",
         isbn: "9781529062489"
     },
     {
         title: "The Day the Crayons Quit",
         isbn: "9780605711662"
     },
-    // {
-    //     title: "Temptation",
-    //     isbn:
-    // }, what book is this?^
     {
         title: "To Kill a Mockingbird",
         isbn: "9780397001514"
@@ -42,10 +40,6 @@ var ourBooks = [
         title: "The Diary of a Young Girl",
         isbn: "9780141315188"
     },
-    // {
-    //     title: "Hope a Magic Land",
-    //     isbn:
-    // }, what book is this?^
     {
         title: "Animal Farm",
         isbn: "9780140059618"
@@ -87,7 +81,7 @@ var ourBooks = [
         isbn: "9781783784455"
     },
     {
-        title: "Trick Mirror: Reflections on Self-Delusion",
+        title: "Trick Mirror",
         isbn: "9780525510543"
     },
     {
@@ -122,6 +116,8 @@ var ourBooks = [
 btnUserYes.click(function() {
     bookIndex++ 
     titleEl.text(ourBooks[bookIndex].title);
+    score++
+    scoreEl.text(score)
     
     console.log("button click");
 })
