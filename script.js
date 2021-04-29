@@ -136,32 +136,38 @@ btnUserYes.click(function() {
 
 
 // Get data from NYT best sellers API
-function checkNYT(bookISBN) {
+async function checkNYT(bookISBN) {
     var nytBase = "https://api.nytimes.com/svc/books/v3";
     // Searches for book with specific title or ISBN
     // var nytPath = "/lists/best-sellers/history.json?title=Change of Heart&";
     var nytPath = "/lists/best-sellers/history.json?isbn=";
     var nytKey = "&api-key=tZmSouJCKxYwB50PAcr0v6vFs6EI8yNm";
     var nytURL = nytBase + nytPath + bookISBN + nytKey;
-    var boolState;
-    fetch(nytURL, {
+    var response = await fetch(nytURL, {
         method: "GET",
         headers: {
             "Accept": "application/json"
         },
     })
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data);
-            if (data.results.length === 0) {
-                boolState = false;
-            } else {
-                boolState = true;
-            }
-        });
-    return boolState;
+    var data = await response.json()
+        // .then(function (response) {
+        //     return response.json();
+        // })
+    
+    console.log(data);
+    if (data.results.length === 0) {
+        return false;
+    } else {
+        return true;
+    }
+        // .then(function (data) {
+        //     console.log(data);
+        //     if (data.results.length === 0) {
+        //         return false;
+        //     } else {
+        //         return true;
+        //     }
+        // });
 }
 
 
