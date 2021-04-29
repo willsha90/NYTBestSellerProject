@@ -123,6 +123,11 @@ btnUserYes.click(function() {
     console.log("button click");
 })
 
+// after click, show pop up of right or wrong
+// score counter
+// advance book
+// 
+
 
 
 // Get data from NYT best sellers API
