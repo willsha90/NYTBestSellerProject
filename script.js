@@ -1,8 +1,9 @@
 // DEPENDENCIES
 var book = $('.title-image');
 var titleEl = $("#title-caption")
+var btnUserYes = $("#userSaysYes");
+var btnUserNo = $("#userSaysNo");
 
-var bookIndex = 0;
 var ourBooks = [
     {
         title: "Where the Red Fern Grows",
@@ -115,14 +116,12 @@ var ourBooks = [
 ];
 
 //generate book data element
-function generateBooks() {
-    titleEl.text(ourBooks[bookIndex].title);
-}
-
-//
-function nextBook() {
-
-}
+btnUserYes.click(function() {
+    for (i=0 ; i<ourBooks.length; i++) {
+        titleEl.text(ourBooks[i].title);
+    }
+    console.log("button click");
+})
 
 
 
@@ -213,10 +212,11 @@ function questionyes1() {
 
 
 // connect button to 
-var elQuestion = queryselector // input html div for question
-var elanswer = queryselector // input html div for user answer
-var btnUserYes = document.querySelector ("#userSaysYes");
-var btnUserNo = document.querySelector ("#userSaysNo");
+// var elQuestion = queryselector // input html div for question
+// var elanswer = queryselector // input html div for user answer
 
-btnUserYes.addEventListener("click");
-btnUserYNo.addEventListener("click");
+
+// btnUserYes.addEventListener("click");
+// btnUserYNo.addEventListener("click");
+
+
