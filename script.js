@@ -1,5 +1,129 @@
 // DEPENDENCIES
 var book = $('.title-image');
+var titleEl = $("#title-caption")
+var btnUserYes = $("#userSaysYes");
+var btnUserNo = $("#userSaysNo");
+
+var ourBooks = [
+    {
+        title: "Where the Red Fern Grows",
+        isbn: "044022814X"
+    },
+    {
+        title: "Where the Wild Things Are",
+        isbn: "9780812413748"
+    },
+    {
+        title: "Empire of Pain: The Secret History of the Sackler Dynasty",
+        isbn: "9781529062489"
+    },
+    {
+        title: "The Day the Crayons Quit",
+        isbn: "9780605711662"
+    },
+    // {
+    //     title: "Temptation",
+    //     isbn:
+    // }, what book is this?^
+    {
+        title: "To Kill a Mockingbird",
+        isbn: "9780397001514"
+    },
+    {
+        title: "The Beautiful Poetry of Donald Trump",
+        isbn: "9781786894724"
+    },
+    {
+        title: "War and Peace",
+        isbn: "9780393042375"
+    },
+    {
+        title: "The Diary of a Young Girl",
+        isbn: "9780141315188"
+    },
+    // {
+    //     title: "Hope a Magic Land",
+    //     isbn:
+    // }, what book is this?^
+    {
+        title: "Animal Farm",
+        isbn: "9780140059618"
+    },
+    {
+        title: "The Way of Kings",
+        isbn: "9780765326355"
+    },
+    {
+        title: "Name of the Wind",
+        isbn: "9780756404079"
+    },
+    {
+        title: "The Giver",
+        isbn: "9780395645666"
+    },
+    {
+        title: "The Art of the Deal",
+        isbn: "9780394555287"
+    },
+    {
+        title: "Harry Potter and the Sorcerer's Stone",
+        isbn: "9780747532699"
+    },
+    {
+        title: "A Promised Land",
+        isbn:  "9781524763169"
+    },
+    {
+        title: "On Earth We're Briefly Gorgeous",
+        isbn: "9780525562023"
+    },
+    {
+        title: "My Year of Rest and Relaxation",
+        isbn: "9780525522119"
+    },
+    {
+        title: "Ghost Wall",
+        isbn: "9781783784455"
+    },
+    {
+        title: "Trick Mirror: Reflections on Self-Delusion",
+        isbn: "9780525510543"
+    },
+    {
+        title: "Camera Lucida",
+        isbn: "9782070205417"
+    },
+    {
+        title: "Me Talk Pretty One Day",
+        isbn: "9780316777728"
+    },
+    {
+        title: "Myra Breckinridge",
+        isbn: "9780586029220"
+    },
+    {
+        title: "Line of Beauty",
+        isbn: "9780330483209"
+    },
+    {
+        title: "Invisible Cities",
+        isbn: "9780151452903"
+    },
+    {
+        title: "Autobiography of Red",
+        isbn: "9780375401336"
+    }
+];
+
+//generate book data element
+btnUserYes.click(function() {
+    for (i=0 ; i<ourBooks.length; i++) {
+        titleEl.text(ourBooks[i].title);
+    }
+    console.log("button click");
+})
+
+
 
 // Get data from NYT best sellers API
 var nytBase = "https://api.nytimes.com/svc/books/v3";
@@ -88,10 +212,11 @@ function questionyes1() {
 
 
 // connect button to 
-var elQuestion = queryselector // input html div for question
-var elanswer = queryselector // input html div for user answer
-var btnUserYes = document.querySelector ("#userSaysYes");
-var btnUserNo = document.querySelector ("#userSaysNo");
+// var elQuestion = queryselector // input html div for question
+// var elanswer = queryselector // input html div for user answer
 
-btnUserYes.addEventListener("click");
-btnUserYNo.addEventListener("click");
+
+// btnUserYes.addEventListener("click");
+// btnUserYNo.addEventListener("click");
+
+

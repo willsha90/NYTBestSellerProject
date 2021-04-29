@@ -1,19 +1,35 @@
 body {
     min-height: 100vh;;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color:lightgray;
 }
 
-.image-container {
-    display: flex;
-}
-
-.image-box {
-    max-width: 66vw;
+header {
+    padding: 1rem 0;
+    background-color: #FFE69F;
+    min-width: 100%;
+    box-shadow: -3px -6px 20px 0px grey;
 }
 
 footer {
     display: flex;
+    min-width: 100%;
+}
+
+.footer {
+    background-color:lightgray;
+    padding: 7rem 1.5rem 6rem;
+}
+
+.buttons {
+    display: flex;
     justify-content: space-evenly;
+}
+
+.card {
+    max-width: 80%;
+    margin: 5rem 0 1rem 0;
 }
