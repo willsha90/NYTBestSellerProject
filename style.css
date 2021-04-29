@@ -10,6 +10,7 @@ header {
     padding: 1rem 0;
     background-color: #FFE69F;
     min-width: 100%;
+    box-shadow: -1px 1px 20px grey;
 }
 
 footer {
