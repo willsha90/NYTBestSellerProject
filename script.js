@@ -3,7 +3,10 @@ var book = $('.title-image');
 var titleEl = $("#title-caption")
 var btnUserYes = $("#userSaysYes");
 var btnUserNo = $("#userSaysNo");
+var scoreEl = $("#score");
+var score = 0;
 
+var bookIndex = 0;
 var ourBooks = [
     {
         title: "Where the Red Fern Grows",
@@ -14,17 +17,13 @@ var ourBooks = [
         isbn: "9780812413748"
     },
     {
-        title: "Empire of Pain: The Secret History of the Sackler Dynasty",
+        title: "Empire of Pain",
         isbn: "9781529062489"
     },
     {
         title: "The Day the Crayons Quit",
         isbn: "9780605711662"
     },
-    // {
-    //     title: "Temptation",
-    //     isbn:
-    // }, what book is this?^
     {
         title: "To Kill a Mockingbird",
         isbn: "9780397001514"
@@ -41,10 +40,6 @@ var ourBooks = [
         title: "The Diary of a Young Girl",
         isbn: "9780141315188"
     },
-    // {
-    //     title: "Hope a Magic Land",
-    //     isbn:
-    // }, what book is this?^
     {
         title: "Animal Farm",
         isbn: "9780140059618"
@@ -86,7 +81,7 @@ var ourBooks = [
         isbn: "9781783784455"
     },
     {
-        title: "Trick Mirror: Reflections on Self-Delusion",
+        title: "Trick Mirror",
         isbn: "9780525510543"
     },
     {
@@ -115,13 +110,28 @@ var ourBooks = [
     }
 ];
 
+
+
 //generate book data element
 btnUserYes.click(function() {
-    for (i=0 ; i<ourBooks.length; i++) {
-        titleEl.text(ourBooks[i].title);
-    }
+    bookIndex++ 
+    titleEl.text(ourBooks[bookIndex].title);
+    score++
+    scoreEl.text(score)
+    
     console.log("button click");
 })
+
+//fix title container to standard size
+// add element for score
+// update css
+
+
+// after click, show pop up of right or wrong
+    //also interval for directions in swiping
+// score counter
+// advance book
+// 
 
 
 
@@ -153,6 +163,24 @@ function checkNYT(bookISBN) {
         });
     return boolState;
 }
+
+
+//check book
+// function checkBook(title) {
+//     if (in the NYT) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// function clickYES () {
+//     var bookTitle = "some title";
+//     if(checkBook(bookTitle) ==== true) {
+        
+//     }
+// }
+
 
 // Fetch data from Open Library API
 function getLibrary() {
