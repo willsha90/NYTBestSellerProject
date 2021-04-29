@@ -4,6 +4,7 @@ var titleEl = $("#title-caption")
 var btnUserYes = $("#userSaysYes");
 var btnUserNo = $("#userSaysNo");
 
+var bookIndex = 0;
 var ourBooks = [
     {
         title: "Where the Red Fern Grows",
@@ -115,15 +116,23 @@ var ourBooks = [
     }
 ];
 
+
+
 //generate book data element
 btnUserYes.click(function() {
-    for (i=0 ; i<ourBooks.length; i++) {
-        titleEl.text(ourBooks[i].title);
-    }
+    bookIndex++ 
+    titleEl.text(ourBooks[bookIndex].title);
+    
     console.log("button click");
 })
 
+//fix title container to standard size
+// add element for score
+// update css
+
+
 // after click, show pop up of right or wrong
+    //also interval for directions in swiping
 // score counter
 // advance book
 // 
@@ -156,6 +165,24 @@ function getNYT() {
             book.attr("src", bookImg)
         });
 }
+
+
+//check book
+// function checkBook(title) {
+//     if (in the NYT) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// function clickYES () {
+//     var bookTitle = "some title";
+//     if(checkBook(bookTitle) ==== true) {
+        
+//     }
+// }
+
 
 // Fetch data from Open Library API
 function getLibrary() {
