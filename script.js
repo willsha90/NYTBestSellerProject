@@ -187,13 +187,13 @@ function getLibrary(bookISBN) {
         })
         .then(function (data) {
             console.log(data);
-            book.attr("src", openLibImage);
-            // book.attr("src", data.items[0].volumeInfo.imageLinks.thumbnail);
+            // book.attr("src", openLibImage);
+            book.attr("src", data.items[0].volumeInfo.imageLinks.thumbnail);
         });
 }
 
 // Runs function to get data from NYT api
-var booksIndex = 0;
+var booksIndex = 1;
 // var bool = checkNYT();
 checkNYT("title", ourBooks[booksIndex].title)
     .then((bool) => {
