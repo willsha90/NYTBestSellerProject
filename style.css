@@ -16,9 +16,9 @@ header {
     background-color: oldlace;
     min-width: 100%;
     padding: 2rem 0;
-    position: fixed;
     top: 0;
     z-index: 1;
+    position: fixed;
 }
 
 .head-content {
@@ -44,11 +44,15 @@ footer {
     height: 33%;
 }
 
+.title-image {
+    max-height: 20%;
+}
+
 .footer {
     background-color:oldlace;
     padding: 2rem 1.5rem 1rem;
-    position: fixed;
     bottom: 0;
+    position: fixed;
 }
 
 .buttons {
