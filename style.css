@@ -112,9 +112,3 @@ footer {
         flex-shrink: 1;
     }
 }
-
-@media only screen and (max-height: 743px) {
-    .main-contain {
-        height: 30%;
-    }
-}
