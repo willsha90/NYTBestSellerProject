@@ -156,41 +156,44 @@ async function checkNYT(searchType, searchBook) {
     var data = await response.json()
     
     console.log(data);
-    if (data.results.length === 0) {
-        return false;
-    } else {
+    if (data.results.length > 0) {
         return true;
+    } else {
+        return false;
     }
 }
 
 
 // Fetch data from Open Library API
-function getLibrary() {
+function getLibrary(bookISBN) {
     // Get book cover using its ISBN code
-    // var bookImageURL = "https://storage.googleapis.com/du-prd/books/images/9780765326355.jpg";
-    var openLibImage = "http://covers.openlibrary.org/b/isbn/9780765326355-L.jpg";
+    var openLibImage = "http://covers.openlibrary.org/b/isbn/" + bookISBN + "-L.jpg";
     // Get book data from library API
     var libraryURL = "https://openlibrary.org/works/OL45883W.json";
-    // var googleBookURL = "https://www.googleapis.com/books/v1/volumes?q=wayofking"
-    fetch(libraryURL)
+    var googleBookURL = "https://www.googleapis.com/books/v1/volumes?q=" + bookISBN;
+    fetch(googleBookURL)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            // console.log(data);
+            console.log(data);
             book.attr("src", openLibImage);
+            // book.attr("src", data.items[0].volumeInfo.imageLinks.thumbnail);
         });
 }
 
 // Runs function to get data from NYT api
-var booksIndex = 9;
-var bool = checkNYT(ourBooks[booksIndex].isbn)
-if (bool) {
-    console.log(ourBooks[booksIndex].title + " IS A NYT BEST SELLER");
-} else {
-    console.log(ourBooks[booksIndex].title + " NOT ON LIST");
-}
-getLibrary();
+var booksIndex = 0;
+// var bool = checkNYT();
+checkNYT("title", ourBooks[booksIndex].title)
+    .then((bool) => {
+        if (bool) {
+            console.log(ourBooks[booksIndex].title + " IS A NYT BEST SELLER");
+        } else {
+            console.log(ourBooks[booksIndex].title + " NOT ON LIST");
+        }
+    });
+getLibrary(ourBooks[booksIndex].isbn);
 
 
 // true/false 
