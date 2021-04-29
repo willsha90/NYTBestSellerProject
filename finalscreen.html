@@ -10,14 +10,20 @@
 </head>
 
 <body>
-    <section>
+    <header>
         <h1>Thank You for Visiting the NYT-Best Sellers App! </h1>
-    </section>
+    </header>
 
-    <h3>Forgot if your Book is a NYT Best-Seller? Type it in below to check!</h4>
+<div>
+    <button>  Start Over!       
+    </button>
+</div>
+
+    <h3>Forgot if a Book is a NYT Best-Seller? Type it in below to check!</h4>
 
 
-        <!-- <form action="/action_page.php"> INPUT PAGE TO CHECK HERE --> 
+        <!-- <form action="/action_page.php"> INPUT PAGE TO CHECK HERE -->
+        <form>
             <label for="userbook">Select Your Book:</label>
             <select id="userbook" name="book">
                 <option>"Where the Red Fern Grows"</option>
@@ -48,6 +54,30 @@
             </select>
             <input type="submit">
         </form>
+
+        <div class="userbooksubmissions">
+            <h3>Is Your Favorite Book Missing?</h3>
+            <p>Fill out the below form to enter in a new book for our future app updates!</p>
+
+            <form action="/action_page.php">
+                <label for="bname">Title:</label>
+                <input type="text" id="bname" name="bname"><br><br>
+
+                <form action="/action_page.php">
+                    <label for="isin">ISIN:</label>
+                    <input type="text" id="isin" name="isin"><br><br>
+
+
+                <label for="yes_no_radio">Is this book a NYT best-seller?</label>
+                <p>
+                    <input type="radio" name="yes_no" checked>Yes</input>
+                
+                    <input type="radio" name="yes_no">No</input>
+                    </p>
+                <button>Submit</button>    
+            </form>
+
+        </div>
 </body>
 
 </html>
