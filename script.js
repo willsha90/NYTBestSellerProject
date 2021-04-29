@@ -126,16 +126,14 @@ btnUserYes.click(function() {
 
 
 // Get data from NYT best sellers API
-var nytBase = "https://api.nytimes.com/svc/books/v3";
-// var nytPath = "/lists/names.json?bestsellers-date=2009-04-28&";
-// Searches for book with specific title
-var nytPath = "/lists/best-sellers/history.json?title=Change of Heart&";
-// Gets list from specified date and section, includes image
-// var nytPath = "/lists/2019-01-20/hardcover-fiction.json?";
-var nytKey = "api-key=tZmSouJCKxYwB50PAcr0v6vFs6EI8yNm";
-var nytSecret = "OeaEEqlPYBWtKSxa"
-function getNYT() {
-    var nytURL = nytBase + nytPath + nytKey;
+function checkNYT(bookISBN) {
+    var nytBase = "https://api.nytimes.com/svc/books/v3";
+    // Searches for book with specific title or ISBN
+    // var nytPath = "/lists/best-sellers/history.json?title=Change of Heart&";
+    var nytPath = "/lists/best-sellers/history.json?isbn=";
+    var nytKey = "&api-key=tZmSouJCKxYwB50PAcr0v6vFs6EI8yNm";
+    var nytURL = nytBase + nytPath + bookISBN + nytKey;
+    var boolState;
     fetch(nytURL, {
         method: "GET",
         headers: {
@@ -147,9 +145,13 @@ function getNYT() {
         })
         .then(function (data) {
             console.log(data);
-            // var bookImg = data.results.books[0].book_image;
-            // book.attr("src", bookImg);
+            if (data.results.length === 0) {
+                boolState = false;
+            } else {
+                boolState = true;
+            }
         });
+    return boolState;
 }
 
 // Fetch data from Open Library API
@@ -165,13 +167,18 @@ function getLibrary() {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
+            // console.log(data);
             book.attr("src", openLibImage);
         });
 }
 
 // Runs function to get data from NYT api
-// getNYT();
+var booksIndex = 9;
+if (checkNYT(ourBooks[booksIndex].isbn)) {
+    console.log(ourBooks[booksIndex].title + " IS A NYT BEST SELLER");
+} else {
+    console.log(ourBooks[booksIndex].title + " NOT ON LIST");
+}
 getLibrary();
 
 
@@ -220,17 +227,9 @@ function questionyes1() {
 // connect button to 
 // var elQuestion = queryselector // input html div for question
 // var elanswer = queryselector // input html div for user answer
-<<<<<<< HEAD
-var btnUserYes = document.querySelector ("#userSaysYes");
-var btnUserNo = document.querySelector ("#userSaysNo");
-
-// btnUserYes.addEventListener("click");
-// btnUserYNo.addEventListener("click");
-=======
 
 
 // btnUserYes.addEventListener("click");
 // btnUserYNo.addEventListener("click");
 
 
->>>>>>> main
