@@ -135,14 +135,18 @@ btnUserYes.click(function() {
 
 
 
-// Get data from NYT best sellers API
-async function checkNYT(bookISBN) {
+// Checks if specified book is in NYT best sellers API
+async function checkNYT(searchType, searchBook) {
     var nytBase = "https://api.nytimes.com/svc/books/v3";
     // Searches for book with specific title or ISBN
-    // var nytPath = "/lists/best-sellers/history.json?title=Change of Heart&";
-    var nytPath = "/lists/best-sellers/history.json?isbn=";
+    if (searchType === "title") {
+        var nytPath = "/lists/best-sellers/history.json?title=" + searchBook;
+    } else if (searchType === "isbn") {
+        var nytPath = "/lists/best-sellers/history.json?isbn=" + searchBook;
+    } else {console.log("No search type included for checkNYT")};
     var nytKey = "&api-key=tZmSouJCKxYwB50PAcr0v6vFs6EI8yNm";
-    var nytURL = nytBase + nytPath + bookISBN + nytKey;
+    var nytURL = nytBase + nytPath + nytKey;
+    // Fetch data from NYT API
     var response = await fetch(nytURL, {
         method: "GET",
         headers: {
@@ -150,9 +154,6 @@ async function checkNYT(bookISBN) {
         },
     })
     var data = await response.json()
-        // .then(function (response) {
-        //     return response.json();
-        // })
     
     console.log(data);
     if (data.results.length === 0) {
@@ -160,32 +161,7 @@ async function checkNYT(bookISBN) {
     } else {
         return true;
     }
-        // .then(function (data) {
-        //     console.log(data);
-        //     if (data.results.length === 0) {
-        //         return false;
-        //     } else {
-        //         return true;
-        //     }
-        // });
 }
-
-
-//check book
-// function checkBook(title) {
-//     if (in the NYT) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
-
-// function clickYES () {
-//     var bookTitle = "some title";
-//     if(checkBook(bookTitle) ==== true) {
-        
-//     }
-// }
 
 
 // Fetch data from Open Library API
@@ -208,7 +184,8 @@ function getLibrary() {
 
 // Runs function to get data from NYT api
 var booksIndex = 9;
-if (checkNYT(ourBooks[booksIndex].isbn)) {
+var bool = checkNYT(ourBooks[booksIndex].isbn)
+if (bool) {
     console.log(ourBooks[booksIndex].title + " IS A NYT BEST SELLER");
 } else {
     console.log(ourBooks[booksIndex].title + " NOT ON LIST");
