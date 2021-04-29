@@ -35,6 +35,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 35%
 }
 
 .footer {
@@ -51,5 +52,53 @@ footer {
 
 .card {
     background-color: linen;
+    width: 100%;
 }
 
+@media only screen and (max-width: 480px) {
+.main-contain {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 55%;
+    flex-shrink: 1;
+}
+}
+
+@media only screen and (min-width: 768px) {
+    .main-contain {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 35%;
+        flex-shrink: 1;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .main-contain {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 27%;
+        flex-shrink: 1;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .main-contain {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 24%;
+        flex-shrink: 1;
+    }
+}
