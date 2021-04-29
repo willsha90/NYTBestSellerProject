@@ -11,10 +11,14 @@ header {
     padding: 1rem 0;
     background-color: #FFE69F;
     min-width: 100%;
-    box-shadow: -3px -6px 20px 0px grey;
-    padding: 3rem 0;
+    padding: 2rem 0;
     position: fixed;
     top: 0;
+}
+
+.head-content {
+    display: flex;
+    flex-direction: column;
 }
 
 footer {
