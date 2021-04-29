@@ -116,8 +116,18 @@ var ourBooks = [
 btnUserYes.click(function() {
     bookIndex++ 
     titleEl.text(ourBooks[bookIndex].title);
-    score++
-    scoreEl.text(score)
+    checkNYT("title", ourBooks[booksIndex].title)
+    .then((bool) => {
+        if (bool) {
+            score++
+            scoreEl.text(score)
+            // add element
+            console.log(ourBooks[booksIndex].title + " IS A NYT BEST SELLER");
+        } else {
+            console.log(ourBooks[booksIndex].title + " NOT ON LIST");
+        }
+    });
+    getLibrary(ourBooks[booksIndex].isbn);
     
     console.log("button click");
 })
