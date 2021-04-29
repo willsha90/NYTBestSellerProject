@@ -4,6 +4,7 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-color:lightgray;
 }
 
 header {
@@ -16,6 +17,10 @@ header {
 footer {
     display: flex;
     min-width: 100%;
+}
+
+.footer {
+    background-color:lightgray;
 }
 
 .buttons {
