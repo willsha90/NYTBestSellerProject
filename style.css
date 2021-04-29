@@ -7,8 +7,9 @@ body {
 }
 
 header {
-    margin: 2rem;
-    padding-top: 1rem;
+    padding: 1rem 0;
+    background-color: #FFE69F;
+    min-width: 100%;
 }
 
 footer {
