@@ -14,80 +14,98 @@
 </head>
 
 <body>
+        <div class="final-head">
+            <h1 class="title is-2">Thank you for visiting the NYT or NOT App! </h1>
+        </div>
 
     <div class="final-main container is-fluid">
-    <h1 class="title is-2">Thank you for visiting the NYT or NOT App! </h1>
-
-    <h6 class="title is-4">Forgot if a Book is a NYT Best-Seller?</h6>
-    
-
-        <!-- <form action="/action_page.php"> INPUT PAGE TO CHECK HERE -->
-        <form>
-        <div class="field">
-            <label class="label" for="userbook">Select Your Book:</label>
-            <div class="control">
-            <div class="select">
-            <select id="userbook" name="book">
-                <option>Where the Red Fern Grows</option>
-                <option>Empire of Pain: The Secret History of the Sackler Dynasty</option>
-                <option>Where the Wild Things Are</option>
-                <option>The Day the Crayons Quit</option>
-                <option>To Kill a Mockingbird</option>
-                <option>The Beautiful Poetry of Donald Trump</option>
-                <option>War and Peace</option>
-                <option>The Diary of a Young Girl</option>
-                <option>Animal Farm</option>
-                <option>The Way of Kings</option>
-                <option>Name of the Wind</option>
-                <option>The Giver</option>
-                <option>The Art of the Deal</option>
-                <option>Harry Potter and the Sorcerer's Stone</option>
-                <option>A Promised Land</option>
-                <option>On Earth We're Briefly Gorgeous</option>
-                <option>My Year of Rest and Relaxation</option>
-                <option>Ghost Wall</option>
-                <option>Trick Mirror: Reflections on Self-Delusion</option>
-                <option>Camera Lucida</option>
-                <option>Me Talk Pretty One Day</option>
-                <option>Myra Breckinridge</option>
-                <option>Line of Beauty</option>
-                <option>Invisible Cities</option>
-                <option>Autobiography of Red</option>
-            </select>
+        <div class="content">
+        <h6 class="title is-4">Forgot if a Book is a NYT Best-Seller?</h6>
+            <form>
+            <div class="field">
+                <label class="label" for="userbook">Select Your Book:</label>
+                <div class="control">
+                <div class="select">
+                <select id="userbook" name="book">
+                    <option>Where the Red Fern Grows</option>
+                    <option>Empire of Pain: The Secret History of the Sackler Dynasty</option>
+                    <option>Where the Wild Things Are</option>
+                    <option>The Day the Crayons Quit</option>
+                    <option>To Kill a Mockingbird</option>
+                    <option>The Beautiful Poetry of Donald Trump</option>
+                    <option>War and Peace</option>
+                    <option>The Diary of a Young Girl</option>
+                    <option>Animal Farm</option>
+                    <option>The Way of Kings</option>
+                    <option>Name of the Wind</option>
+                    <option>The Giver</option>
+                    <option>The Art of the Deal</option>
+                    <option>Harry Potter and the Sorcerer's Stone</option>
+                    <option>A Promised Land</option>
+                    <option>On Earth We're Briefly Gorgeous</option>
+                    <option>My Year of Rest and Relaxation</option>
+                    <option>Ghost Wall</option>
+                    <option>Trick Mirror: Reflections on Self-Delusion</option>
+                    <option>Camera Lucida</option>
+                    <option>Me Talk Pretty One Day</option>
+                    <option>Myra Breckinridge</option>
+                    <option>Line of Beauty</option>
+                    <option>Invisible Cities</option>
+                    <option>Autobiography of Red</option>
+                </select>
+                </div>
+                </div>
             </div>
-            </div>
-        </div>
-        <input class="button is-small" type="submit" value="Submit" id="listBtn">
-        </form>
-        <br>
-        <div class="userbooksubmissions">
-            <h3 class="title is-6">Is Your Favorite Book Missing?</h3>
-            <p>Fill out the below form to enter in a new book!</p>
+            <input class="button is-small" type="submit" value="Submit" id="listBtn">
+            </form>
             <br>
-
-            <form action="/action_page.php">
-                <label for="bname">Title: </label>
-                <input type="text" id="bname" name="bname" placeholder="Gone With the Wind">
+            <div class="userbooksubmissions">
+                <h3 class="title is-6">Is Your Favorite Book Missing?</h3>
+                <p>Fill out the below form to enter in a new book for our future app updates!</p>
+                <br>
 
                 <form action="/action_page.php">
-                    <label for="isbn">ISBN: </label>
-                    <input type="text" id="isbn" name="isbn">
+                    <label for="bname">Title: </label>
+                    <input type="text" id="bname" name="bname" placeholder="Gone With the Wind">
+
+                    <form action="/action_page.php">
+                        <label for="isbn">ISBN: </label>
+                        <input type="text" id="isbn" name="isbn" placeholder="10 or 13 digit barcode #">
+                        <br>
+                        <br>
+
+
+                    <label for="yes_no_radio">Is this book a NYT best-seller?</label>
+
+                    <p>
+                        <input type="radio" name="yes_no" checked>Yes</input>
+                        <input type="radio" name="yes_no">No</input>
+                    </p>
                     <br>
-                    <br>
+                    <button class="button is-small" id="submit-new-book">Submit</button>    
+                </form>
+            </div>
+            <br>
+            <button class="button is-warning is-light">Play Again</button>
+            </div>
+            
 
-
-                <label for="yes_no_radio">Is this book a NYT best-seller?</label>
-
-                <p>
-                    <input type="radio" name="yes_no" checked>Yes</input>
-                    <input type="radio" name="yes_no">No</input>
-                </p>
-                <br>
-                <button class="button is-small" id="submit-new-book">Submit</button>    
-            </form>
+            <div class="card card-contain final-card">
+                <div class="card-image">
+                <figure class="image">
+                    <img class="title-image book-cover" src="https://upload.wikimedia.org/wikipedia/en/6/6b/Gone_with_the_Wind_cover.jpg" alt="Placeholder image">
+                </figure>
+                </div>
+                <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                    <p class="is-4" id="book-title">Gone With the Wind</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
-        <br>
-        <button class="button is-warning is-light">Play Again</button>
     </div>
 
     <div>
