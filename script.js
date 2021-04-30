@@ -25,7 +25,7 @@ var ourBooks = [
     },
     {
         title: "The Day the Crayons Quit",
-        isbn: "9780605711662"
+        isbn: "0399255370"
     },
     {
         title: "To Kill a Mockingbird",
@@ -53,7 +53,7 @@ var ourBooks = [
     },
     {
         title: "Name of the Wind",
-        isbn: "9780756404079"
+        isbn: "0756404746"
     },
     {
         title: "The Giver",
@@ -65,11 +65,11 @@ var ourBooks = [
     },
     {
         title: "Harry Potter and the Sorcerer's Stone",
-        isbn: "9780747532699"
+        isbn: "0590353403"
     },
     {
         title: "A Promised Land",
-        isbn:  "9781524763169"
+        isbn:  "0525633766"
     },
     {
         title: "On Earth We're Briefly Gorgeous",
@@ -89,23 +89,23 @@ var ourBooks = [
     },
     {
         title: "Camera Lucida",
-        isbn: "9782070205417"
+        isbn: "0374532338"
     },
     {
         title: "Me Talk Pretty One Day",
-        isbn: "9780316777728"
+        isbn: "	0349113912"
     },
     {
         title: "Myra Breckinridge",
-        isbn: "9780586029220"
+        isbn: "0525566503"
     },
     {
         title: "Line of Beauty",
-        isbn: "9780330483209"
+        isbn: "1582346100"
     },
     {
         title: "Invisible Cities",
-        isbn: "9780151452903"
+        isbn: "0156453800"
     },
     {
         title: "Autobiography of Red",
