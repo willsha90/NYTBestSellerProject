@@ -172,6 +172,7 @@ btnUserNo.click(function() {
 
 function endGame () {
     if (bookIndex === ourBooks.length -1) {
+        
         window.location.replace("finalscreen.html");
     }
 }
