@@ -15,7 +15,7 @@ header {
     padding: 1rem 0;
     background-color: oldlace;
     min-width: 100%;
-    padding: 2rem 0;
+    padding: 2rem 0 1rem 0;
     top: 0;
     z-index: 1;
     position: fixed;
@@ -24,11 +24,6 @@ header {
 .head-content {
     display: flex;
     flex-direction: column;
-}
-
-.scoreboard {
-    display: flex;
-    justify-content: space-evenly;
 }
 
 footer {
