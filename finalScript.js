@@ -4,8 +4,8 @@ listBtn = $("#listBtn");
 titleInput = $("#bname");
 isbnInput = $("#isbn");
 searchBtn = $("#submit-new-book");
-bookImg = $("#bookImg");
-infoDump = $("#infoDump");
+bookImg = $(".book-cover");
+infoDump = $("#book-title");
 
 // FUNCTIONS
 function getListBook(event) {
