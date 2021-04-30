@@ -1,3 +1,4 @@
+
 # NYTBestSellerProject
 
 The purpose of this application is to create a tool where the user can swifty check if a book is a NYT best-seller. Additionally, the application tests the user New York Times - Best Seller knowledge with a true/false quiz regarding numerous genres and their best-seller status. 
