@@ -146,7 +146,7 @@ btnUserYes.click(function() {
 
 btnUserNo.click(function() {
     endGame();
-    coreboardEl.attr("style", "display:none");
+    scoreboardEl.attr("style", "display:none");
     correctEl.attr("style", "display:none");
     incorrectEl.attr("style", "display:none");
     checkNYT("title", ourBooks[bookIndex].title)
@@ -172,7 +172,6 @@ btnUserNo.click(function() {
 
 function endGame () {
     if (bookIndex === ourBooks.length -1) {
-        
         window.location.replace("finalscreen.html");
     }
 }
