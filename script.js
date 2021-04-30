@@ -6,7 +6,8 @@ var btnUserNo = $("#userSaysNo");
 var scoreEl = $("#score");
 var score = 0;
 var incorrectEl = $("#incorrect-answer");
-var correctEl = $("#correct-answer")
+var correctEl = $("#correct-answer");
+var scoreboardEl = $("#scoreboard");
 
 var bookIndex = 0;
 var ourBooks = [
@@ -118,46 +119,62 @@ var ourBooks = [
 
 
 btnUserYes.click(function() {
+    endGame();
+    scoreboardEl.attr("style", "display:none");
     correctEl.attr("style", "display:none");
     incorrectEl.attr("style", "display:none");
-    bookIndex++ 
-    titleEl.text(ourBooks[bookIndex].title);
     checkNYT("title", ourBooks[bookIndex].title)
     .then((bool) => {
         if (bool) {
             score++
             scoreEl.text(score)
+            scoreboardEl.attr("style", "display:block");
             correctEl.attr("style", "display:block");
             console.log(ourBooks[bookIndex].title + " IS A NYT BEST SELLER");
         } else {
+            scoreboardEl.attr("style", "display:block");
             incorrectEl.attr("style", "display:block")
             console.log(ourBooks[bookIndex].title + " NOT ON LIST");
         }
+        
     });
-    getLibrary(ourBooks[bookIndex].isbn);
     console.log("button click");
+    bookIndex++ 
+    titleEl.text(ourBooks[bookIndex].title);
+    getLibrary(ourBooks[bookIndex].isbn);
 })
 
 btnUserNo.click(function() {
+    endGame();
+    coreboardEl.attr("style", "display:none");
     correctEl.attr("style", "display:none");
     incorrectEl.attr("style", "display:none");
-    bookIndex++ 
-    titleEl.text(ourBooks[bookIndex].title);
     checkNYT("title", ourBooks[bookIndex].title)
     .then((bool) => {
         if (!bool) {
             score++
             scoreEl.text(score)
+            scoreboardEl.attr("style", "display:block");
             correctEl.attr("style", "display:block");
             console.log(ourBooks[bookIndex].title + " IS A NYT BEST SELLER");
         } else {
+            scoreboardEl.attr("style", "display:block");
             incorrectEl.attr("style", "display:block")
             console.log(ourBooks[bookIndex].title + " NOT ON LIST");
         }
+        
     });
-    getLibrary(ourBooks[bookIndex].isbn);
     console.log("button click");
+    bookIndex++ 
+    titleEl.text(ourBooks[bookIndex].title);
+    getLibrary(ourBooks[bookIndex].isbn);
 })
+
+function endGame () {
+    if (bookIndex === ourBooks.length -1) {
+        window.location.replace("finalscreen.html");
+    }
+}
 
 
 //fix title container to standard size
@@ -287,4 +304,5 @@ function questionyes1() {
 // INITIALIZATIONS
 getLibrary(ourBooks[bookIndex].isbn);
 titleEl.text(ourBooks[bookIndex].title);
+
 
