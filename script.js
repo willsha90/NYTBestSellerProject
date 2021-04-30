@@ -301,6 +301,10 @@ function questionyes1() {
 // btnUserYes.addEventListener("click");
 // btnUserYNo.addEventListener("click");
 
+$("#scoreEl").html(score);
+$("#finalScore").html(score);
+
+
 // INITIALIZATIONS
 getLibrary(ourBooks[bookIndex].isbn);
 titleEl.text(ourBooks[bookIndex].title);
