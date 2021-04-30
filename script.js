@@ -7,7 +7,7 @@ var scoreEl = $("#score");
 var score = 0;
 var incorrectEl = $("#incorrect-answer");
 var correctEl = $("#correct-answer")
-
+var finalScore = $("#finalScore").html(score)
 var bookIndex = 0;
 var ourBooks = [
     {
@@ -283,6 +283,10 @@ function questionyes1() {
 
 // btnUserYes.addEventListener("click");
 // btnUserYNo.addEventListener("click");
+
+$("#scoreEl").html(score);
+$("#finalScore").html(score);
+
 
 // INITIALIZATIONS
 getLibrary(ourBooks[bookIndex].isbn);
