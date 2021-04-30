@@ -6,8 +6,9 @@ var btnUserNo = $("#userSaysNo");
 var scoreEl = $("#score");
 var score = 0;
 var incorrectEl = $("#incorrect-answer");
-var correctEl = $("#correct-answer")
-var finalScore = $("#finalScore").html(score)
+var correctEl = $("#correct-answer");
+var scoreboardEl = $("#scoreboard");
+
 var bookIndex = 0;
 var ourBooks = [
     {
@@ -24,7 +25,7 @@ var ourBooks = [
     },
     {
         title: "The Day the Crayons Quit",
-        isbn: "9780605711662"
+        isbn: "0399255370"
     },
     {
         title: "To Kill a Mockingbird",
@@ -52,7 +53,7 @@ var ourBooks = [
     },
     {
         title: "Name of the Wind",
-        isbn: "9780756404079"
+        isbn: "0756404746"
     },
     {
         title: "The Giver",
@@ -64,11 +65,11 @@ var ourBooks = [
     },
     {
         title: "Harry Potter and the Sorcerer's Stone",
-        isbn: "9780747532699"
+        isbn: "0590353403"
     },
     {
         title: "A Promised Land",
-        isbn:  "9781524763169"
+        isbn:  "0525633766"
     },
     {
         title: "On Earth We're Briefly Gorgeous",
@@ -88,23 +89,23 @@ var ourBooks = [
     },
     {
         title: "Camera Lucida",
-        isbn: "9782070205417"
+        isbn: "0374532338"
     },
     {
         title: "Me Talk Pretty One Day",
-        isbn: "9780316777728"
+        isbn: "	0349113912"
     },
     {
         title: "Myra Breckinridge",
-        isbn: "9780586029220"
+        isbn: "0525566503"
     },
     {
         title: "Line of Beauty",
-        isbn: "9780330483209"
+        isbn: "1582346100"
     },
     {
         title: "Invisible Cities",
-        isbn: "9780151452903"
+        isbn: "0156453800"
     },
     {
         title: "Autobiography of Red",
@@ -118,46 +119,62 @@ var ourBooks = [
 
 
 btnUserYes.click(function() {
+    endGame();
+    scoreboardEl.attr("style", "display:none");
     correctEl.attr("style", "display:none");
     incorrectEl.attr("style", "display:none");
-    bookIndex++ 
-    titleEl.text(ourBooks[bookIndex].title);
     checkNYT("title", ourBooks[bookIndex].title)
     .then((bool) => {
         if (bool) {
             score++
             scoreEl.text(score)
+            scoreboardEl.attr("style", "display:block");
             correctEl.attr("style", "display:block");
             console.log(ourBooks[bookIndex].title + " IS A NYT BEST SELLER");
         } else {
+            scoreboardEl.attr("style", "display:block");
             incorrectEl.attr("style", "display:block")
             console.log(ourBooks[bookIndex].title + " NOT ON LIST");
         }
+        
     });
-    getLibrary(ourBooks[bookIndex].isbn);
     console.log("button click");
+    bookIndex++ 
+    titleEl.text(ourBooks[bookIndex].title);
+    getLibrary(ourBooks[bookIndex].isbn);
 })
 
 btnUserNo.click(function() {
+    endGame();
+    coreboardEl.attr("style", "display:none");
     correctEl.attr("style", "display:none");
     incorrectEl.attr("style", "display:none");
-    bookIndex++ 
-    titleEl.text(ourBooks[bookIndex].title);
     checkNYT("title", ourBooks[bookIndex].title)
     .then((bool) => {
         if (!bool) {
             score++
             scoreEl.text(score)
+            scoreboardEl.attr("style", "display:block");
             correctEl.attr("style", "display:block");
             console.log(ourBooks[bookIndex].title + " IS A NYT BEST SELLER");
         } else {
+            scoreboardEl.attr("style", "display:block");
             incorrectEl.attr("style", "display:block")
             console.log(ourBooks[bookIndex].title + " NOT ON LIST");
         }
+        
     });
-    getLibrary(ourBooks[bookIndex].isbn);
     console.log("button click");
+    bookIndex++ 
+    titleEl.text(ourBooks[bookIndex].title);
+    getLibrary(ourBooks[bookIndex].isbn);
 })
+
+function endGame () {
+    if (bookIndex === ourBooks.length -1) {
+        window.location.replace("finalscreen.html");
+    }
+}
 
 
 //fix title container to standard size
@@ -291,4 +308,5 @@ $("#finalScore").html(score);
 // INITIALIZATIONS
 getLibrary(ourBooks[bookIndex].isbn);
 titleEl.text(ourBooks[bookIndex].title);
+
 
